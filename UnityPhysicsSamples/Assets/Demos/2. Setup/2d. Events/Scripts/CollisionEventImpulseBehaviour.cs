@@ -79,6 +79,7 @@ unsafe public class CollisionEventImpulseSystem : JobComponentSystem
 
             if(isBodyARepulser && isBodyBDynamic)
             {
+                Debug.Log("A");
                 var impulseComponent = ColliderEventImpulseGroup[entityA];
                 var velocityComponent = PhysicsVelocityGroup[entityB];
                 velocityComponent.Linear = impulseComponent.Impulse;
@@ -86,6 +87,8 @@ unsafe public class CollisionEventImpulseSystem : JobComponentSystem
             }
             if (isBodyBRepulser && isBodyADynamic)
             {
+                Debug.Log("B");
+
                 var impulseComponent = ColliderEventImpulseGroup[entityB];
                 var velocityComponent = PhysicsVelocityGroup[entityA];
                 velocityComponent.Linear = impulseComponent.Impulse;
